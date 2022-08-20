@@ -94,12 +94,12 @@ struct LockOurLoveView: View {
                         }
                     }
                     Text("By checking this box, I agree to Love Chain's Term of Service")
-                        .font(.custom("InsaniburgerwithCheese", size: 15))
+                        .font(.system(size: 14))
                 }
                 .onTapGesture {
                     check.toggle()
                 }
-                .padding(EdgeInsets(top: 20, leading: 5, bottom: 20, trailing: 5))
+                .padding(EdgeInsets(top: 20, leading: 15, bottom: 20, trailing: 10))
                 Spacer()
                 if !name1.isEmpty && !name2.isEmpty && pickedImage != nil && check == true {
                     Button(action: {
@@ -110,6 +110,7 @@ struct LockOurLoveView: View {
                                     .foregroundColor(.black)
                                     .frame(width: 334, height: 58, alignment: .center)
                             Text("LOCK")
+                                .font(.custom("InsaniburgerwithCheese", size: 20))
                                 .foregroundColor(Color(.white))
                         }
                     })
@@ -123,6 +124,7 @@ struct LockOurLoveView: View {
                                 .frame(width: 334, height: 58, alignment: .center)
                             Text("LOCK")
                                 .foregroundColor(Color(.white))
+                                .font(.custom("InsaniburgerwithCheese", size: 20))
                         }
                     })
                 }
@@ -145,7 +147,7 @@ struct LockOurLoveView: View {
                         action.toggle()
                         lock.toggle()
                         print("Animation start")
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
                             print("5초 후~~")
                             animation.toggle()
                         }
@@ -156,8 +158,10 @@ struct LockOurLoveView: View {
                                 .foregroundColor(.black)
                             Text("LOCK!")
                                 .font(.custom("InsaniburgerwithCheese", size: 20))
+                                .foregroundColor(.white)
                         }
-                        .offset(x: 74, y: 62)
+                        .padding(EdgeInsets(top: 123, leading: 150, bottom: 0, trailing: 0))
+//                        .offset(x: 74, y: 62)
                     })
                 }
             }
@@ -176,8 +180,8 @@ struct LockOurLoveView: View {
     }
 }
 
-//struct LockOurLoveView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        LockOurLoveView()
-//    }
-//}
+struct LockOurLoveView_Previews: PreviewProvider {
+    static var previews: some View {
+        LockOurLoveView(firstNaviLinkActive: .constant(true))
+    }
+}
