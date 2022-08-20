@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State var isTouchedFillBlock: Bool = false
     @State var isTouchedEmptyBlock: Bool = false
+    @State var firstNaviLinkActive = false
     
     var body: some View {
         NavigationView {
@@ -30,11 +31,13 @@ struct HomeView: View {
                     }
                     Spacer()
                     // TODO: Navigation destination 수정
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: LockOurLoveView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
                         Image(systemName: "lock.fill")
                             .font(.system(size: 25))
                             .foregroundColor(.black)
                     }
+                    .navigationBarTitleDisplayMode(.inline)
+                    
                 }
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 700, trailing: 20))
                 VStack {
@@ -136,6 +139,7 @@ struct HomeView: View {
             .navigationTitle("SPOT 102")
             .navigationBarHidden(true)
         }
+        
     }
 }
 
