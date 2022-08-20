@@ -10,6 +10,7 @@ import SwiftUI
 struct BuySpotView: View {
     @SwiftUI.Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @State var toggleTouched: Bool = false
+    @Binding var spotNumber: Int
     
     var body: some View {
         VStack(spacing: 20) {
@@ -20,16 +21,16 @@ struct BuySpotView: View {
                         .scaledToFit()
                         .frame(width: 96)
                     HStack {
-                        Text("#10231")
+                        Text("#1-1")
                             .font(.system(size: 12))
                             .fontWeight(.bold)
-                            .foregroundColor(.white)   
+                            .foregroundColor(.white)
                     }
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 30))
                     .frame(width: 96, height: 96)
                 }
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("spot number 102")
+                    Text("spot number \(spotNumber)")
                         .font(.system(size: 12))
                         .fontWeight(.bold)
                         .foregroundColor(Color("subTitleColor"))
@@ -93,6 +94,7 @@ struct BuySpotView: View {
             .padding(.bottom, 10)
             Button {
                 self.presentationMode.wrappedValue.dismiss()
+                
             } label: {
                 RoundedRectangle(cornerRadius: 12)
                     .foregroundColor(self.toggleTouched == true ? .black : Color("lightGrayColor"))
@@ -111,6 +113,6 @@ struct BuySpotView: View {
 
 struct BuySpotView_Previews: PreviewProvider {
     static var previews: some View {
-        BuySpotView()
+        BuySpotView(spotNumber: .constant(1))
     }
 }

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct HomeView: View {
     @State var firstNaviLinkActive = false
+    @State var spotNumber: Int = 0
+    @State var spotTapped: Bool = false
     
-    var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 40), spacing: 0), count: 10)
+    var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 0), spacing: 0), count: 10)
     
     var body: some View {
         NavigationView {
@@ -34,21 +36,30 @@ struct HomeView: View {
                         // TODO: Navigation destination 수정
                         NavigationLink(destination: LockOurLoveView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
                             Image("LoveLocker")
-                                .font(.system(size: 25))
-                                .foregroundColor(.black)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 25)
                         }
                     }
                     .padding(.horizontal, 20)
                     LazyVGrid(columns: columns, spacing: 0) {
-                        ForEach(1...160, id: \.self) { i in
+                        ForEach(1...160, id: \.self) { spotNum in
                             Button {
-                                print(i)
+                                self.spotTapped.toggle()
+                                
                             } label: {
                                 Rectangle()
                                     .stroke(Color("homeGridColor"))
                                     .frame(width: 40, height: 40)
                             }
-
+                        }
+                    }
+                    if spotTapped == true {
+                        NavigationLink(destination: BuySpotView(spotNumber: $spotNumber)) {
+                            Image("homeSpotButton")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 335)
                         }
                     }
                 }
