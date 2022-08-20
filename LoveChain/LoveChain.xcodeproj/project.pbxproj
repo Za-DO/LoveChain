@@ -47,13 +47,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39E7131E28B153030067BFBA /* Util */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		EEF1D6F128B0F8F000C94B7C = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +66,6 @@
 		EEF1D6FC28B0F8F000C94B7C /* LoveChain */ = {
 			isa = PBXGroup;
 			children = (
-				39E7131E28B153030067BFBA /* Util */,
 				EEF1D71028B103F300C94B7C /* Info.plist */,
 				EEF1D6FD28B0F8F000C94B7C /* LoveChainApp.swift */,
 				EEF1D71328B10C9400C94B7C /* View */,

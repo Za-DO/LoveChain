@@ -21,12 +21,14 @@ struct LockOurLoveFinalView: View {
                         .resizable()
                         .frame(width: 315, height: 315)
                     Image("LoveLocker")
-                        .offset(x: 120, y: -120)
+                        .resizable()
+                        .frame(width: 25, height: 34)
+                        .offset(x: 123, y: -123)
                 }
                 HStack {
                     Text("MINJI")
                         .font(.custom("InsaniburgerwithCheese", size: 20))
-                        .padding(EdgeInsets(top: 0, leading: 25, bottom: 0, trailing: 0))
+                        .padding(EdgeInsets(top: 0, leading: 28, bottom: 0, trailing: 0))
                     Image(systemName: "heart.fill")
                         .foregroundColor(.red)
                     Text("DONGJUN")
@@ -37,14 +39,15 @@ struct LockOurLoveFinalView: View {
                         .offset(x: -25, y: 0)
                 }
                 Divider()
-                    .padding(EdgeInsets(top: 20, leading: 20, bottom: 20, trailing: 20))
+                    .padding(EdgeInsets(top: 20, leading: 25, bottom: 20, trailing: 25))
                 VStack(alignment: .leading) {
-                Text("BUY COUPLE SITE")
+                Text("BUY COUPLE SPOT")
                     .font(.custom("InsaniburgerwithCheese", size: 20))
-                Text("You can buy the couple site to hang a lock")
-                    .font(.custom("InsaniburgerwithCheese", size: 10))
+                Text("You can buy the couple spot to hang a lock")
+                        .font(.system(size: 12))
+                        .padding(EdgeInsets(top: 10, leading: 0, bottom: 30, trailing: 0))
                 }
-                .offset(x: -33, y: 0)
+                .offset(x: -30, y: 0)
                 ZStack {
                     Image("GoButton")
                         .resizable()
