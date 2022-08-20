@@ -32,11 +32,13 @@ struct HomeView: View {
                     }
                     Spacer()
                     // TODO: Navigation destination 수정
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: LockOurLoveView()) {
                         Image(systemName: "lock.fill")
                             .font(.system(size: 25))
                             .foregroundColor(.black)
                     }
+                    .navigationBarTitleDisplayMode(.inline)
+                    
                 }
                 .padding(EdgeInsets(top: 20, leading: 20, bottom: 700, trailing: 20))
                 VStack {
@@ -137,6 +139,7 @@ struct HomeView: View {
             .navigationTitle("MainView")
             .navigationBarHidden(true)
         }
+        
     }
 }
 
