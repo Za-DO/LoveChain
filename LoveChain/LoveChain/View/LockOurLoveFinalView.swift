@@ -26,12 +26,12 @@ struct LockOurLoveFinalView: View {
                         .offset(x: 123, y: -123)
                 }
                 HStack {
-                    Text("MINJI")
+                    Text("Minji")
                         .font(.custom("InsaniburgerwithCheese", size: 20))
                         .padding(EdgeInsets(top: 0, leading: 28, bottom: 0, trailing: 0))
                     Image(systemName: "heart.fill")
                         .foregroundColor(.red)
-                    Text("DONGJUN")
+                    Text("Dongjun")
                         .font(.custom("InsaniburgerwithCheese", size: 20))
                     Spacer()
                     Image(systemName: "square.and.arrow.up")
@@ -43,8 +43,10 @@ struct LockOurLoveFinalView: View {
                 VStack(alignment: .leading) {
                 Text("BUY COUPLE SPOT")
                     .font(.custom("InsaniburgerwithCheese", size: 20))
+                    .foregroundColor(.gray)
                 Text("You can buy the couple spot to hang a lock")
                         .font(.system(size: 12))
+                        .foregroundColor(.gray)
                         .padding(EdgeInsets(top: 10, leading: 0, bottom: 30, trailing: 0))
                 }
                 .offset(x: -30, y: 0)
