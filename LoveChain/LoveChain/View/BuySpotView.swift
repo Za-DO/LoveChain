@@ -23,7 +23,7 @@ struct BuySpotView: View {
                         Text("#10231")
                             .font(.system(size: 12))
                             .fontWeight(.bold)
-                            .foregroundColor(.white)
+                            .foregroundColor(.white)   
                     }
                     .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 30))
                     .frame(width: 96, height: 96)

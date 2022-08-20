@@ -8,135 +8,52 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State var isTouchedFillBlock: Bool = false
-    @State var isTouchedEmptyBlock: Bool = false
     @State var firstNaviLinkActive = false
+    
+    var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 40), spacing: 0), count: 10)
     
     var body: some View {
         NavigationView {
             ZStack {
-                Image("homeViewGrid")
+                Image("homeBackground")
                     .resizable()
                     .ignoresSafeArea()
-                HStack(alignment: .center) {
-                    VStack(alignment: .leading, spacing: 7) {
-                        Image("appLogo")
-                        HStack {
-                            Image(systemName: "heart.fill")
-                                .foregroundColor(Color("mainColor"))
-                            Text("0.1399 ($2.04)")
-                                .font(.custom("InsaniburgerwithCheese", size: 14))
+                VStack {
+                    HStack(alignment: .center) {
+                        VStack(alignment: .leading, spacing: 7) {
+                            Image("appLogo")
+                            HStack(spacing: 4) {
+                                Image("loveCoin")
+                                    .foregroundColor(Color("mainColor"))
+                                Text("0.1399 ($2.04)")
+                                    .font(.system(size: 14))
+                                    .fontWeight(.bold)
+                            }
                         }
                         Spacer()
-                    }
-                    Spacer()
-                    // TODO: Navigation destination 수정
-                    NavigationLink(destination: LockOurLoveView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
-                        Image(systemName: "lock.fill")
-                            .font(.system(size: 25))
-                            .foregroundColor(.black)
-                    }
-                    .navigationBarTitleDisplayMode(.inline)
-                    
-                }
-                .padding(EdgeInsets(top: 20, leading: 20, bottom: 700, trailing: 20))
-                VStack {
-                    Button {
-                        self.isTouchedFillBlock = true
-                    } label: {
-                        Rectangle()
-                            .frame(height: 330)
-                            .opacity(0)
-                    }
-                    Button {
-                        self.isTouchedEmptyBlock = true
-                    } label: {
-                        Rectangle()
-                            .frame(height: 330)
-                            .opacity(0)
-                    }
-                }
-                .padding(.top, 90)
-                
-                if isTouchedFillBlock == true {
-                    Rectangle()
-                        .foregroundColor(.black)
-                        .opacity(0.8)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-                            self.isTouchedFillBlock = false
+                        // TODO: Navigation destination 수정
+                        NavigationLink(destination: LockOurLoveView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
+                            Image("LoveLocker")
+                                .font(.system(size: 25))
+                                .foregroundColor(.black)
                         }
-                    VStack(alignment: .trailing) {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 12)
-                                .frame(width: 314, height: 72)
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Spot 56")
-                                    .font(.custom("InsaniburgerwithCheese", size: 24))
-                                    .foregroundColor(.white)
-                                HStack {
-                                    Text("#3302")
-                                        .font(.custom("InsaniburgerwithCheese", size: 12))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(.white)
-                                    Spacer()
-                                    HStack {
-                                        Image(systemName: "heart.fill")
-                                            .foregroundColor(Color("mainColor"))
-                                        Text("0.1399 ($2.04)")
-                                            .font(.custom("InsaniburgerwithCheese", size: 12))
-                                            .foregroundColor(.white)
-                                    }
-                                }
+                    }
+                    .padding(.horizontal, 20)
+                    LazyVGrid(columns: columns, spacing: 0) {
+                        ForEach(1...160, id: \.self) { i in
+                            Button {
+                                print(i)
+                            } label: {
+                                Rectangle()
+                                    .stroke(Color("homeGridColor"))
+                                    .frame(width: 40, height: 40)
                             }
-                            .padding(.horizontal, 20)
-                        }
-                        .padding(.bottom, 28)
-                        Image("coupleImage")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 315)
-                            .clipShape(RoundedRectangle(cornerRadius: 12))
-                        Text("Minji \(Image(systemName: "heart.fill")) Dongjun")
-                            .font(.system(size: 12))
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                    }
-                    .padding(.horizontal, 38)
-                }
-                if isTouchedEmptyBlock == true {
-                    Rectangle()
-                        .foregroundColor(.black)
-                        .opacity(0.000001)
-                        .ignoresSafeArea()
-                        .onTapGesture {
-                            self.isTouchedEmptyBlock = false
-                        }
-                    Group {
-                        RoundedRectangle(cornerRadius: 12)
-                            .frame(width: 335, height: 72)
-                        HStack(spacing: 62) {
-                            Text("You can buy this spot!")
-                                .font(.system(size: 15))
-                                .fontWeight(.bold)
-                                .foregroundColor(.white)
-                            NavigationLink(destination: BuySpotView()) {
-                                ZStack {
-                                    RoundedRectangle(cornerRadius: 10)
-                                        .foregroundColor(.white)
-                                        .frame(width: 69, height: 41)
-                                    Image(systemName: "arrow.right")
-                                        .font(.system(size: 30))
-                                        .foregroundColor(.black)
-                                }
-                                
-                            }
+
                         }
                     }
-                    .padding(.top, 680)
                 }
             }
-            .navigationTitle("SPOT 102")
+            .navigationTitle("HOME")
             .navigationBarHidden(true)
         }
         
