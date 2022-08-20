@@ -10,6 +10,7 @@ import SwiftUI
 struct HomeView: View {
     @State var isTouchedFillBlock: Bool = false
     @State var isTouchedEmptyBlock: Bool = false
+    @State var firstNaviLinkActive = false
     
     var body: some View {
         NavigationView {
@@ -30,7 +31,7 @@ struct HomeView: View {
                     }
                     Spacer()
                     // TODO: Navigation destination 수정
-                    NavigationLink(destination: LockOurLoveView()) {
+                    NavigationLink(destination: LockOurLoveView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
                         Image(systemName: "lock.fill")
                             .font(.system(size: 25))
                             .foregroundColor(.black)

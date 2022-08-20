@@ -14,6 +14,9 @@ struct LockOurLoveView: View {
     @State private var showingImagePicker = false
     @State var pickedImage: Image?
     @State var action: Bool = false
+    @State var lock: Bool = false
+    @State var animation: Bool = false
+    @Binding var firstNaviLinkActive: Bool
     
     var body: some View {
         ZStack{
@@ -137,7 +140,16 @@ struct LockOurLoveView: View {
                     Image("LockAction")
                         .resizable()
                         .frame(width: 315, height: 245)
-                    NavigationLink(destination: ContentView(), label: {
+                    Button(action: {
+                        // TODO: - 자물쇠 잠기는 애니메이션 동작 후 화면 이동
+                        action.toggle()
+                        lock.toggle()
+                        print("Animation start")
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5) {
+                            print("5초 후~~")
+                            animation.toggle()
+                        }
+                    }, label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 10)
                                 .frame(width: 131, height: 65)
@@ -146,16 +158,26 @@ struct LockOurLoveView: View {
                                 .font(.custom("InsaniburgerwithCheese", size: 20))
                         }
                         .offset(x: 74, y: 62)
-                        
                     })
+                }
+            }
+            if lock {
+                if animation {
+                    LockOurLoveFinalView(firstNaviLinkActive: $firstNaviLinkActive)
+                        .ignoresSafeArea()
+                } else {
+                    Rectangle()
+                        .foregroundColor(.black)
+                        .opacity(0.8)
+                        .ignoresSafeArea()
                 }
             }
         }
     }
 }
 
-struct LockOurLoveView_Previews: PreviewProvider {
-    static var previews: some View {
-        LockOurLoveView()
-    }
-}
+//struct LockOurLoveView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        LockOurLoveView()
+//    }
+//}
