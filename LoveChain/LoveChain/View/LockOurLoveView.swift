@@ -32,6 +32,7 @@ struct LockOurLoveView: View {
                             .foregroundColor(Color("LightGray"))
                         TextField("       Lover 1", text: $name1)
                             .padding(EdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10))
+                        
                     }
                     .frame(width: 132, height: 47, alignment: .center)
                     Image(systemName: "heart.fill")
