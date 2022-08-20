@@ -14,10 +14,20 @@ struct BuySpotView: View {
     var body: some View {
         VStack(spacing: 20) {
             HStack(alignment: .top, spacing: 17) {
-                Rectangle()
-                    .foregroundColor(.black)
-                    .scaledToFit()
-                    .frame(width: 96)
+                ZStack {
+                    Rectangle()
+                        .foregroundColor(.black)
+                        .scaledToFit()
+                        .frame(width: 96)
+                    HStack {
+                        Text("#10231")
+                            .font(.system(size: 12))
+                            .fontWeight(.bold)
+                            .foregroundColor(.white)
+                    }
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 30))
+                    .frame(width: 96, height: 96)
+                }
                 VStack(alignment: .leading, spacing: 5) {
                     Text("spot number 102")
                         .font(.system(size: 12))

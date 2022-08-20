@@ -11,7 +11,6 @@
 		39E7131B28B12A940067BFBA /* SUImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7131A28B12A940067BFBA /* SUImagePicker.swift */; };
 		39E7131D28B147C30067BFBA /* LockOurLoveFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7131C28B147C30067BFBA /* LockOurLoveFinalView.swift */; };
 		EEF1D6FE28B0F8F000C94B7C /* LoveChainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1D6FD28B0F8F000C94B7C /* LoveChainApp.swift */; };
-		EEF1D70028B0F8F000C94B7C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1D6FF28B0F8F000C94B7C /* ContentView.swift */; };
 		EEF1D70228B0F8F100C94B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF1D70128B0F8F100C94B7C /* Assets.xcassets */; };
 		EEF1D70528B0F8F100C94B7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF1D70428B0F8F100C94B7C /* Preview Assets.xcassets */; };
 		EEF1D70E28B1030700C94B7C /* Insanibc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF1D70C28B1030700C94B7C /* Insanibc.ttf */; };
@@ -26,7 +25,6 @@
 		39E7131C28B147C30067BFBA /* LockOurLoveFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockOurLoveFinalView.swift; sourceTree = "<group>"; };
 		EEF1D6FA28B0F8F000C94B7C /* LoveChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF1D6FD28B0F8F000C94B7C /* LoveChainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveChainApp.swift; sourceTree = "<group>"; };
-		EEF1D6FF28B0F8F000C94B7C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		EEF1D70128B0F8F100C94B7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EEF1D70428B0F8F100C94B7C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EEF1D70C28B1030700C94B7C /* Insanibc.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insanibc.ttf; sourceTree = "<group>"; };
@@ -47,13 +45,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		39E7131E28B153030067BFBA /* Util */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
 		EEF1D6F128B0F8F000C94B7C = {
 			isa = PBXGroup;
 			children = (
@@ -73,7 +64,6 @@
 		EEF1D6FC28B0F8F000C94B7C /* LoveChain */ = {
 			isa = PBXGroup;
 			children = (
-				39E7131E28B153030067BFBA /* Util */,
 				EEF1D71028B103F300C94B7C /* Info.plist */,
 				EEF1D6FD28B0F8F000C94B7C /* LoveChainApp.swift */,
 				EEF1D71328B10C9400C94B7C /* View */,
@@ -104,12 +94,11 @@
 		EEF1D71328B10C9400C94B7C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				EEF1D6FF28B0F8F000C94B7C /* ContentView.swift */,
 				EEF1D71128B1045900C94B7C /* HomeView.swift */,
+				EEF1D71828B11D9500C94B7C /* BuySpotView.swift */,
 				39E7131828B12A690067BFBA /* LockOurLoveView.swift */,
 				39E7131C28B147C30067BFBA /* LockOurLoveFinalView.swift */,
 				39E7131A28B12A940067BFBA /* SUImagePicker.swift */,
-				EEF1D71828B11D9500C94B7C /* BuySpotView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -190,7 +179,6 @@
 				EEF1D71228B1045900C94B7C /* HomeView.swift in Sources */,
 				39E7131D28B147C30067BFBA /* LockOurLoveFinalView.swift in Sources */,
 				EEF1D71928B11D9500C94B7C /* BuySpotView.swift in Sources */,
-				EEF1D70028B0F8F000C94B7C /* ContentView.swift in Sources */,
 				39E7131B28B12A940067BFBA /* SUImagePicker.swift in Sources */,
 				EEF1D6FE28B0F8F000C94B7C /* LoveChainApp.swift in Sources */,
 			);
@@ -321,7 +309,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LoveChain/Preview Content\"";
-				DEVELOPMENT_TEAM = PQ5FS4VVLR;
+				DEVELOPMENT_TEAM = KMT22L7NMB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoveChain/Info.plist;
@@ -351,7 +339,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"LoveChain/Preview Content\"";
-				DEVELOPMENT_TEAM = PQ5FS4VVLR;
+				DEVELOPMENT_TEAM = KMT22L7NMB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = LoveChain/Info.plist;

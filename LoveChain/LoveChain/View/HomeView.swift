@@ -83,7 +83,7 @@ struct HomeView: View {
                                     HStack {
                                         Image(systemName: "heart.fill")
                                             .foregroundColor(Color("mainColor"))
-                                        Text("0.1399 ($179.14)")
+                                        Text("0.1399 ($2.04)")
                                             .font(.custom("InsaniburgerwithCheese", size: 12))
                                             .foregroundColor(.white)
                                     }
