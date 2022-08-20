@@ -19,13 +19,11 @@ struct HomeView: View {
                     .ignoresSafeArea()
                 HStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 7) {
-                        Text("LOVE CHAIN")
-                            .font(.custom("InsaniburgerwithCheese", size: 24))
-                            .foregroundColor(.red)
+                        Image("appLogo")
                         HStack {
                             Image(systemName: "heart.fill")
-                                .foregroundColor(.red)
-                            Text("0.1399")
+                                .foregroundColor(Color("mainColor"))
+                            Text("0.1399 ($2.04)")
                                 .font(.custom("InsaniburgerwithCheese", size: 14))
                         }
                         Spacer()
@@ -81,7 +79,7 @@ struct HomeView: View {
                                     Spacer()
                                     HStack {
                                         Image(systemName: "heart.fill")
-                                            .foregroundColor(.red)
+                                            .foregroundColor(Color("mainColor"))
                                         Text("0.1399 ($179.14)")
                                             .font(.custom("InsaniburgerwithCheese", size: 12))
                                             .foregroundColor(.white)
@@ -119,7 +117,7 @@ struct HomeView: View {
                                 .font(.system(size: 15))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
-                            NavigationLink(destination: ContentView()) {
+                            NavigationLink(destination: BuySpotView()) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 10)
                                         .foregroundColor(.white)
@@ -134,7 +132,7 @@ struct HomeView: View {
                     .padding(.top, 680)
                 }
             }
-            .navigationTitle("MainView")
+            .navigationTitle("SPOT 102")
             .navigationBarHidden(true)
         }
     }

@@ -14,6 +14,7 @@
 		EEF1D70E28B1030700C94B7C /* Insanibc.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF1D70C28B1030700C94B7C /* Insanibc.ttf */; };
 		EEF1D70F28B1030700C94B7C /* Insanibu.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF1D70D28B1030700C94B7C /* Insanibu.ttf */; };
 		EEF1D71228B1045900C94B7C /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1D71128B1045900C94B7C /* HomeView.swift */; };
+		EEF1D71928B11D9500C94B7C /* BuySpotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1D71828B11D9500C94B7C /* BuySpotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		EEF1D70D28B1030700C94B7C /* Insanibu.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Insanibu.ttf; sourceTree = "<group>"; };
 		EEF1D71028B103F300C94B7C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		EEF1D71128B1045900C94B7C /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		EEF1D71828B11D9500C94B7C /* BuySpotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuySpotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +92,7 @@
 			children = (
 				EEF1D6FF28B0F8F000C94B7C /* ContentView.swift */,
 				EEF1D71128B1045900C94B7C /* HomeView.swift */,
+				EEF1D71828B11D9500C94B7C /* BuySpotView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEF1D71228B1045900C94B7C /* HomeView.swift in Sources */,
+				EEF1D71928B11D9500C94B7C /* BuySpotView.swift in Sources */,
 				EEF1D70028B0F8F000C94B7C /* ContentView.swift in Sources */,
 				EEF1D6FE28B0F8F000C94B7C /* LoveChainApp.swift in Sources */,
 			);
