@@ -1,10 +1,9 @@
-# ZaDotemplate
-
-# Team Za:DO
-자, 두가자!
-
 ![iOS](https://img.shields.io/badge/Swift-iOS-51a9e8?logo=Swift)
+# Team Hyva
+[@Terry](https://github.com/terry-koo) | [@Gary](https://github.com/Anti9uA) | [@Thina](https://github.com/yoo86) | [@Anna](https://github.com/Eunbi-Cho) 
 
+# Love Chain
+__Lock your Love__
 
 ## Git Commit Message
 |Type|Subject|
@@ -33,17 +32,14 @@ ex) [Type] #이슈번호 커밋메세지 `git commit -m '[feat] #12 로그인 �
 ## :pushpin: Features
 
 
-## :technologist: Authors
-- [@Terry](https://github.com/terry-koo) | [@Gary](https://github.com/Anti9uA) | [@Thina](https://github.com/yoo86) | [@Anna](https://github.com/Eunbi-Cho) 
-
 ## :triangular_flag_on_post: Demo
 
 ## :green_heart: Screenshots
 
 ## :sparkles: Skills & Tech Stack
+- Go
+- Ignite CLI
 - SwiftUI
-- UIKit
-- CoreData
 
 ## :lock_with_ink_pen: License
 [MIT](https://choosealicense.com/licenses/mit/)
