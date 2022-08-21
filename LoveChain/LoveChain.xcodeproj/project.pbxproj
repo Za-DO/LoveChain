@@ -10,6 +10,9 @@
 		39E7131928B12A690067BFBA /* LockOurLoveView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7131828B12A690067BFBA /* LockOurLoveView.swift */; };
 		39E7131B28B12A940067BFBA /* SUImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7131A28B12A940067BFBA /* SUImagePicker.swift */; };
 		39E7131D28B147C30067BFBA /* LockOurLoveFinalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39E7131C28B147C30067BFBA /* LockOurLoveFinalView.swift */; };
+		EED18D2628B1917900ED9E30 /* CoupleCertificateData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED18D2528B1917900ED9E30 /* CoupleCertificateData.swift */; };
+		EED18D2928B1935200ED9E30 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED18D2828B1935200ED9E30 /* ColorExtension.swift */; };
+		EED18D2B28B1940900ED9E30 /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EED18D2A28B1940900ED9E30 /* MockData.swift */; };
 		EEF1D6FE28B0F8F000C94B7C /* LoveChainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1D6FD28B0F8F000C94B7C /* LoveChainApp.swift */; };
 		EEF1D70228B0F8F100C94B7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF1D70128B0F8F100C94B7C /* Assets.xcassets */; };
 		EEF1D70528B0F8F100C94B7C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEF1D70428B0F8F100C94B7C /* Preview Assets.xcassets */; };
@@ -23,6 +26,9 @@
 		39E7131828B12A690067BFBA /* LockOurLoveView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockOurLoveView.swift; sourceTree = "<group>"; };
 		39E7131A28B12A940067BFBA /* SUImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUImagePicker.swift; sourceTree = "<group>"; };
 		39E7131C28B147C30067BFBA /* LockOurLoveFinalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockOurLoveFinalView.swift; sourceTree = "<group>"; };
+		EED18D2528B1917900ED9E30 /* CoupleCertificateData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoupleCertificateData.swift; sourceTree = "<group>"; };
+		EED18D2828B1935200ED9E30 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
+		EED18D2A28B1940900ED9E30 /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
 		EEF1D6FA28B0F8F000C94B7C /* LoveChain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LoveChain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EEF1D6FD28B0F8F000C94B7C /* LoveChainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveChainApp.swift; sourceTree = "<group>"; };
 		EEF1D70128B0F8F100C94B7C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -45,6 +51,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EED18D2428B1915800ED9E30 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				EED18D2528B1917900ED9E30 /* CoupleCertificateData.swift */,
+				EED18D2A28B1940900ED9E30 /* MockData.swift */,
+			);
+			name = DataModel;
+			path = View;
+			sourceTree = "<group>";
+		};
 		EEF1D6F128B0F8F000C94B7C = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +83,8 @@
 				EEF1D71028B103F300C94B7C /* Info.plist */,
 				EEF1D6FD28B0F8F000C94B7C /* LoveChainApp.swift */,
 				EEF1D71328B10C9400C94B7C /* View */,
+				EED18D2428B1915800ED9E30 /* DataModel */,
+				EED18D2828B1935200ED9E30 /* ColorExtension.swift */,
 				EEF1D70128B0F8F100C94B7C /* Assets.xcassets */,
 				EEF1D70B28B102D600C94B7C /* font */,
 				EEF1D70328B0F8F100C94B7C /* Preview Content */,
@@ -177,6 +195,9 @@
 			files = (
 				39E7131928B12A690067BFBA /* LockOurLoveView.swift in Sources */,
 				EEF1D71228B1045900C94B7C /* HomeView.swift in Sources */,
+				EED18D2628B1917900ED9E30 /* CoupleCertificateData.swift in Sources */,
+				EED18D2928B1935200ED9E30 /* ColorExtension.swift in Sources */,
+				EED18D2B28B1940900ED9E30 /* MockData.swift in Sources */,
 				39E7131D28B147C30067BFBA /* LockOurLoveFinalView.swift in Sources */,
 				EEF1D71928B11D9500C94B7C /* BuySpotView.swift in Sources */,
 				39E7131B28B12A940067BFBA /* SUImagePicker.swift in Sources */,

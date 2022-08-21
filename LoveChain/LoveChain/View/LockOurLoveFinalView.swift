@@ -17,7 +17,7 @@ struct LockOurLoveFinalView: View {
                 Text("YOUR LOVE IS LOCKED!")
                     .font(.custom("InsaniburgerwithCheese", size: 20))
                 ZStack {
-                    Image("coupleImage")
+                    Image("coupleImage1")
                         .resizable()
                         .frame(width: 315, height: 315)
                     Image("LoveLocker")

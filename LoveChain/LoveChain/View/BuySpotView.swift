@@ -11,6 +11,7 @@ struct BuySpotView: View {
     @SwiftUI.Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @State var toggleTouched: Bool = false
     @Binding var spotNumber: Int
+    @Binding var spotTapped: Bool
     
     var body: some View {
         VStack(spacing: 20) {
@@ -21,12 +22,12 @@ struct BuySpotView: View {
                         .scaledToFit()
                         .frame(width: 96)
                     HStack {
-                        Text("#1-1")
+                        Text("#\(spotNumber)-\(spotNumber)")
                             .font(.system(size: 12))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
                     }
-                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 30))
+                    .padding(EdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 40))
                     .frame(width: 96, height: 96)
                 }
                 VStack(alignment: .leading, spacing: 5) {
@@ -36,6 +37,9 @@ struct BuySpotView: View {
                         .foregroundColor(Color("subTitleColor"))
                     HStack(spacing: 4) {
                         Image("loveCoin")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20)
                         Text("0.1390 ($2.04)")
                             .font(.system(size: 12))
                             .fontWeight(.bold)
@@ -52,6 +56,9 @@ struct BuySpotView: View {
                 VStack(alignment: .trailing, spacing: 5) {
                     HStack(spacing: 4) {
                         Image("loveCoin")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20)
                         Text("0.0009")
                             .font(.custom("InsaniburgerwithCheese", size: 24))
                             .fontWeight(.bold)
@@ -70,6 +77,9 @@ struct BuySpotView: View {
                 VStack(alignment: .trailing, spacing: 5) {
                     HStack(spacing: 4) {
                         Image("loveCoin")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 20)
                         Text("0.1399")
                             .font(.custom("InsaniburgerwithCheese", size: 24))
                             .fontWeight(.bold)
@@ -108,11 +118,14 @@ struct BuySpotView: View {
 
         }
         .padding(.horizontal, 40)
+        .onDisappear {
+            spotTapped = false
+        }
     }
 }
 
-struct BuySpotView_Previews: PreviewProvider {
-    static var previews: some View {
-        BuySpotView(spotNumber: .constant(1))
-    }
-}
+//struct BuySpotView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BuySpotView(spotNumber: .constant(1), spotTapped: )
+//    }
+//}
