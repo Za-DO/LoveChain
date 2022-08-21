@@ -23,7 +23,7 @@ struct HomeView: View {
                         Image("appLogo")
                             .resizable()
                             .scaledToFit()
-                            .frame(width: 160)
+                            .frame(width: 122)
                         HStack(spacing: 4) {
                             Image("loveCoin")
                                 .resizable()
@@ -31,7 +31,8 @@ struct HomeView: View {
                                 .frame(width: 20)
                                 .foregroundColor(Color("mainColor"))
                             Text("0.1399 ($2.04)")
-                                .font(.system(size: 14))
+                                .font(.system(size: 10))
+                                .fontWeight(.bold)
                         }
                     }
                     Spacer()
@@ -123,7 +124,7 @@ struct HomeView: View {
                     }
                 }
             }
-            .navigationTitle("MainView")
+            .navigationTitle("Home")
             .navigationBarHidden(true)
         }
     }

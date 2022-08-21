@@ -176,9 +176,10 @@ struct LockOurLoveView: View {
                             .foregroundColor(.black)
                             .opacity(0.8)
                             .ignoresSafeArea()
-                        Image("Locking")
+                        Image("loveLock")
                             .resizable()
-                            .frame(width: 380, height: 380)
+                            .scaledToFit()
+                            .frame(width: 200)
                     }
                 }
             }
