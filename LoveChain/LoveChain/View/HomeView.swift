@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+jjjj
 struct HomeView: View {
     @State var firstNaviLinkActive = false
     @State var spotNumber: Int = 0
