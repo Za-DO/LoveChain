@@ -142,12 +142,13 @@ struct LockOurLoveView: View {
                     Image("LockAction")
                         .resizable()
                         .frame(width: 315, height: 245)
+                        .offset(x: 0, y: -40)
                     Button(action: {
                         // TODO: - 자물쇠 잠기는 애니메이션 동작 후 화면 이동
                         action.toggle()
                         lock.toggle()
                         print("Animation start")
-                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 1) {
+                        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
                             print("5초 후~~")
                             animation.toggle()
                         }
@@ -161,8 +162,8 @@ struct LockOurLoveView: View {
                                 .foregroundColor(.white)
                         }
                         .padding(EdgeInsets(top: 123, leading: 150, bottom: 0, trailing: 0))
-//                        .offset(x: 74, y: 62)
                     })
+                    .offset(x: 0, y: -40)
                 }
             }
             if lock {
@@ -170,13 +171,19 @@ struct LockOurLoveView: View {
                     LockOurLoveFinalView(firstNaviLinkActive: $firstNaviLinkActive)
                         .ignoresSafeArea()
                 } else {
-                    Rectangle()
-                        .foregroundColor(.black)
-                        .opacity(0.8)
-                        .ignoresSafeArea()
+                    ZStack {
+                        Rectangle()
+                            .foregroundColor(.black)
+                            .opacity(0.8)
+                            .ignoresSafeArea()
+                        Image("Locking")
+                            .resizable()
+                            .frame(width: 380, height: 380)
+                    }
                 }
             }
         }
+        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
