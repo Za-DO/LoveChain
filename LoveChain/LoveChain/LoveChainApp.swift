@@ -11,7 +11,7 @@ import SwiftUI
 struct LoveChainApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeView(coupleData: CoupleCertificateData(id: 1, hashData: "#1-1", coupleImage: "coupleImage1", spotStatement: .soldout))
+            HomeView()
         }
     }
 }

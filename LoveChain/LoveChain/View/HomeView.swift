@@ -6,89 +6,67 @@
 //
 
 import SwiftUI
-jjjj
+
 struct HomeView: View {
     @State var firstNaviLinkActive = false
-    @State var spotNumber: Int = 0
-    @State var spotTapped: Bool = false
-    var coupleData: CoupleCertificateData
-    
-    var columns: [GridItem] = Array(repeating: .init(.flexible(minimum: 38), spacing: 0), count: 10)
-    
+    @State var isTouchedFillBlock: Bool = false
+    @State var isTouchedEmptyBlock: Bool = false
+
     var body: some View {
         NavigationView {
             ZStack {
-                Image("homeBackground")
+                Image("homeViewGrid")
                     .resizable()
                     .ignoresSafeArea()
-                VStack {
-                    HStack(alignment: .top) {
-                        VStack(alignment: .leading, spacing: 7) {
-                            Image("appLogo")
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 7) {
+                        Image("appLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 160)
+                        HStack(spacing: 4) {
+                            Image("loveCoin")
                                 .resizable()
                                 .scaledToFit()
-                                .frame(width: 160)
-                            HStack(spacing: 4) {
-                                Image("loveCoin")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 20)
-                                    .foregroundColor(Color("mainColor"))
-                                Text("0.1399 ($2.04)")
-                                    .font(.system(size: 14))
-                                    .fontWeight(.bold)
-                            }
-                        }
-                        Spacer()
-                        VStack(alignment: .trailing, spacing: 20) {
-                            NavigationLink(destination: LockOurLoveView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
-                                Image("LoveLocker")
-                                    .resizable()
-                                    .scaledToFit()
-                                    .frame(width: 25)
-                            }
-                            Image("spotInfo")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 154)
+                                .frame(width: 20)
+                                .foregroundColor(Color("mainColor"))
+                            Text("0.1399 ($2.04)")
+                                .font(.system(size: 14))
                         }
                     }
-                    .padding(.horizontal, 20)
-                    LazyVGrid(columns: columns, spacing: 0) {
-                        ForEach(1...160, id: \.self) { spotNum in
-                            Button {
-                                self.spotTapped.toggle()
-                                self.spotNumber = spotNum
-                            } label: {
-                                if coupleData.spotStatement == .soldout {
-                                    Image(dataSource.filter({$0.id == spotNum}).isEmpty ? "vacancySpot" : dataSource.filter({$0.id == spotNum})[0].coupleImage )
-                                        .resizable()
-                                        .scaledToFit()
-                                        .opacity(0.4)
-                                        .frame(width: 38)
-                                }
-                            }
-                        }
-                    }
-                }
-                VStack {
                     Spacer()
-                    if self.spotTapped == true {
-                        NavigationLink(destination: BuySpotView(spotNumber: $spotNumber, spotTapped: $spotTapped)) {
-                            Image("homeSpotButton")
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 335)
-                        }
+                    NavigationLink(destination: LockOurLoveView(firstNaviLinkActive: $firstNaviLinkActive), isActive: $firstNaviLinkActive) {
+                        Image("LoveLocker")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 25)
                     }
                 }
-                if self.spotTapped == true {
+                .padding(EdgeInsets(top: 20, leading: 20, bottom: 700, trailing: 20))
+                VStack {
+                    Button {
+                        self.isTouchedFillBlock = true
+                    } label: {
+                        Rectangle()
+                            .frame(height: 330)
+                            .opacity(0)
+                    }
+                    Button {
+                        self.isTouchedEmptyBlock = true
+                    } label: {
+                        Rectangle()
+                            .frame(height: 330)
+                            .opacity(0)
+                    }
+                }
+                .padding(.top, 90)
+                if isTouchedFillBlock == true {
                     Rectangle()
                         .foregroundColor(.black)
                         .opacity(0.8)
                         .ignoresSafeArea()
                         .onTapGesture {
-                            self.spotTapped = false
+                            self.isTouchedFillBlock = false
                         }
                     VStack(alignment: .trailing) {
                         ZStack {
@@ -105,11 +83,9 @@ struct HomeView: View {
                                         .foregroundColor(.white)
                                     Spacer()
                                     HStack {
-                                        Image("loveCoin")
-                                            .resizable()
-                                            .scaledToFit()
-                                            .frame(width: 20)
-                                        Text("0.1399 ($2.04)")
+                                        Image(systemName: "heart.fill")
+                                            .foregroundColor(.red)
+                                        Text("0.1399 ($179.14)")
                                             .font(.custom("InsaniburgerwithCheese", size: 12))
                                             .foregroundColor(.white)
                                     }
@@ -130,16 +106,31 @@ struct HomeView: View {
                     }
                     .padding(.horizontal, 38)
                 }
+                if isTouchedEmptyBlock == true {
+                    Rectangle()
+                        .foregroundColor(.black)
+                        .opacity(0.000001)
+                        .ignoresSafeArea()
+                        .onTapGesture {
+                            self.isTouchedEmptyBlock = false
+                        }
+                    NavigationLink(destination: BuySpotView(isTouchedEmptyBlock: $isTouchedEmptyBlock)) {
+                        Image("homeSpotButton")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 335)
+                            .padding(.top, 680)
+                    }
+                }
             }
-            .navigationTitle("HOME")
+            .navigationTitle("MainView")
             .navigationBarHidden(true)
         }
-        
     }
 }
 
 struct HomeView_Previews: PreviewProvider {
     static var previews: some View {
-        HomeView(coupleData: CoupleCertificateData(id: 1, hashData: "#1-1", coupleImage: "coupleImage1", spotStatement: .soldout))
+        HomeView()
     }
 }

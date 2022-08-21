@@ -10,8 +10,7 @@ import SwiftUI
 struct BuySpotView: View {
     @SwiftUI.Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @State var toggleTouched: Bool = false
-    @Binding var spotNumber: Int
-    @Binding var spotTapped: Bool
+    @Binding var isTouchedEmptyBlock: Bool
     
     var body: some View {
         VStack(spacing: 20) {
@@ -22,7 +21,7 @@ struct BuySpotView: View {
                         .scaledToFit()
                         .frame(width: 96)
                     HStack {
-                        Text("#\(spotNumber)-\(spotNumber)")
+                        Text("#54-54")
                             .font(.system(size: 12))
                             .fontWeight(.bold)
                             .foregroundColor(.white)
@@ -31,7 +30,7 @@ struct BuySpotView: View {
                     .frame(width: 96, height: 96)
                 }
                 VStack(alignment: .leading, spacing: 5) {
-                    Text("spot number \(spotNumber)")
+                    Text("spot number 54")
                         .font(.system(size: 12))
                         .fontWeight(.bold)
                         .foregroundColor(Color("subTitleColor"))
@@ -119,7 +118,7 @@ struct BuySpotView: View {
         }
         .padding(.horizontal, 40)
         .onDisappear {
-            spotTapped = false
+            self.isTouchedEmptyBlock = false
         }
     }
 }
